@@ -1,5 +1,10 @@
 module Hydrocraft {
 
+imports
+{
+  Base
+}
+
 model HCAA12Shotgun
 {
   mesh = Weapons/HCAA12Shotgun,
@@ -100,11 +105,12 @@ model HCWardog
     mesh = weapons/HCWardog,
     texture = weapons/HCWardog,
   }
-
-
-
-
-
+  
+model HCAluminiumbat
+  {
+    mesh = weapons/2handed/Baseballbat,
+    texture = weapons/HCAluminumBat,
+  }
 
 
 }
