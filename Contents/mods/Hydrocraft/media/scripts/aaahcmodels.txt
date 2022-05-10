@@ -685,4 +685,19 @@ module Hydrocraft
 			rotate = -90.0000 -89.0000 0.0000,
 		}
   }
+  model HCSpeariron
+  {
+    mesh = weapons/HCSpear,
+    texture = weapons/HCSpearIron,
+  }
+  model HCSpearbronze
+  {
+    mesh = weapons/HCSpear,
+    texture = weapons/HCSpearBronze,
+  }
+  model HCSpearcopper
+  {
+    mesh = weapons/HCSpear,
+    texture = weapons/HCSpearCopper,
+  }
 }

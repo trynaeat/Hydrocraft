@@ -256,7 +256,7 @@ module Hydrocraft
      item HCSpeariron
     	{
         	MaxRange					=	1.5,
-        	WeaponSprite					=	Poolcue,
+        	WeaponSprite					=	Hydrocraft.HCSpeariron,
         	MinAngle					=	0.2,
         	Type						=	Weapon,
         	MinimumSwingTime				=	2,
