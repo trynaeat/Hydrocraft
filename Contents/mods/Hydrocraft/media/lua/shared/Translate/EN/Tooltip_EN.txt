@@ -6,4 +6,7 @@ Tooltip_EN = {
 	Tooltip_HCSleep = "Drop on floor to use.",
 	HCFarming_Tooltip_UseFruitAsSeed = "Can use fruit as seed.",
 	Tooltip_item_BonusLongbowReload = "Grants +50% reload speed to the Longbow when worn.",
+	Tooltip_HCArrow_steel = "Material: Steel (+30% Damage) (20% Break Chance)",
+	Tooltip_HCArrow_stone = "Material: Stone (40% Break Chance)",
+	Tooltip_HCArrow_bone = "Material: Bone (+10% Damage) (50% Break Chance)",
 }

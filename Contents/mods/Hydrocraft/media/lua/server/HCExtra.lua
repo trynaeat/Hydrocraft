@@ -2682,33 +2682,6 @@ function hcdigshoe(items, result, player)
     end
 end
 
---Arrows and Bolts in Corpses
-function BoltsArrows.arrowBoltHit(wielder, char, weapon)
-    w = weapon:getType();
-    i = char:getInventory();
-    add = false;
-    
-	--80% chance of recovery.
-    if ZombRand(10) > 1 then
-        add = true;
-    end
-    --Initialize bolt count.
-    if BoltsArrows.SBolts[i] == nil then
-        BoltsArrows.SBolts[i] = 0;
-    end
-    --Initialize arrow count.
-    if BoltsArrows.SArrows[i] == nil then
-        BoltsArrows.SArrows = 0;
-    end
-    --Count recovered bolts and arrows.
-    if w == "HCCrossbow" and add then
-        BoltsArrows.SBolts[i] = BoltsArrows.SBolts[i] + 1;
-    elseif w == "HCLongbow" and add then
-        BoltsArrows.SArrows[i] = BoltsArrows.SArrows[i] + 1;
-    end
-end
-
-
 function HCEmptyContainerOnRecipe(item, resultItem, player)
 
 	local pInv = player:getInventory();

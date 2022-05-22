@@ -97,9 +97,13 @@ function HydroLongbow.OnEquipPrimary(player, item)
 end
 
 function HydroLongbow.OnFire(player, weapon)
-    if not HydroLongbow.isHydroLongbow(weapon:getFullType()) then return; end
-    HydroLongbow.setLongbowSprite(player, weapon, 'Hydrocraft.HCLongbow')
-    HydroLongbow.setArrow(weapon, false)
+    if not (HydroLongbow.isHydroLongbow(weapon:getFullType()) or HydroLongbow.isHydroLongbowMag(weapon:getFullType())) then return; end
+    if (HydroLongbow.isHydroLongbow(weapon:getFullType())) then
+        HydroLongbow.setLongbowSprite(player, weapon, 'Hydrocraft.HCLongbow')
+        HydroLongbow.setArrow(weapon, false)
+    end
+    weapon:getModData().shotArrow = weapon:getModData().loadedArrow
+    weapon:getModData().loadedArrow = nil
 end
 
 -- Override base ISReloadWeaponAction to set the sprite when reload finishes
@@ -114,6 +118,19 @@ function ISReloadWeaponAction:loadAmmo()
             end
         end
     end
+    if self.gun and (HydroLongbow.isHydroLongbow(self.gun:getFullType()) or HydroLongbow.isHydroLongbowMag(self.gun:getFullType())) then
+        if self.bullets and not self.bullets:isEmpty() then
+            -- Set condition/damage stats for arrow type
+            local arrow = self.bullets:get(0)
+            self.gun:getModData().loadedArrow = {
+                damageMod = arrow:getModData().damageMod or 1.0,
+                breakChance = arrow:getModData().breakChance or 40,
+            }
+            local scriptItem = self.gun:getScriptItem()
+            local maxDamage = scriptItem:getMaxDamage()
+            self.gun:setMaxDamage(maxDamage * (arrow:getModData().damageMod or 1.0))
+        end
+    end
     original_loadAmmo(self)
 end
 
@@ -123,6 +140,7 @@ function ISUnloadBulletsFromFirearm:animEvent(event, parameter)
     if HydroLongbow.isHydroLongbow(self.gun:getFullType()) then
         if event == 'playReloadSound' then
             HydroLongbow.setArrow(self.gun, false)
+            self.gun:getModData().loadedArrow = nil
         end
     end
     original_animEvent(self, event, parameter)
@@ -133,6 +151,7 @@ local original_removeBullet = ISRackFirearm.removeBullet
 function ISRackFirearm:removeBullet()
     if HydroLongbow.isHydroLongbow(self.gun:getFullType()) then
         HydroLongbow.setArrow(self.gun, false)
+        self.gun:getModData().loadedArrow = nil
     end
     original_removeBullet(self)
 end

@@ -613,6 +613,7 @@ recipe Make Arrow
     NeedToBeLearn:true,
     Result:HCArrow,
     Time:15,
+    OnCreate:Recipe.OnCreate.Hydrocraft.CraftArrow,
     Category:Survivalist,
     OnGiveXP:HCWoodwork_OnGiveTinyXP,
     }

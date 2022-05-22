@@ -14,7 +14,7 @@ local HCLongbowOnEquipPrimary = function(player, item)
 		local scriptItem = item:getScriptItem()
 		local maxDamage = scriptItem:getMaxDamage()
 		
-		--print("Script damage: " .. maxDamage)
+		print("Script damage: " .. maxDamage)
 		
 		local strength = player:getPerkLevel(Perks.Strength)
 		
@@ -24,7 +24,7 @@ local HCLongbowOnEquipPrimary = function(player, item)
 		
 		item:setMaxDamage(maxDamage)
 		
-		--print("Item damage: " .. maxDamage)
+		print("Item damage: " .. maxDamage)
 		
 	end
 end
