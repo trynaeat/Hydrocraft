@@ -124,7 +124,7 @@ item HCFlaganarchist
     	{
 	Weight			=	0.5,
 	Type			=	Normal,
-	DisplayName		=	Archist Flag,
+	DisplayName		=	Anarchist Flag,
 	Icon			=	HCFlaganarchist,
 	DisplayCategory          =   Misc,
 	
@@ -325,7 +325,7 @@ recipe Weld Flag Pole
 	HCSteelpole,
 	OldTire1/OldTire2/OldTire3/NormalTire1/NormalTire2/NormalTire3/ModernTire1/ModernTire2/ModernTire3,
     	HCWeldingset,
-    	keep WeldingMask,
+    	keep [Recipe.GetItemTypes.WeldingMask],
     	keep HCWorkgloves,
     	Result:HCFlagpole,
     	Time:200.0,

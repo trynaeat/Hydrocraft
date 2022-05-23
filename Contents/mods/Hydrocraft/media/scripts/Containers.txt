@@ -63,6 +63,8 @@ module Hydrocraft
         ReplaceInSecondHand = Bag_BigHikingBag_LHand holdingbagleft,
         ReplaceInPrimaryHand = Bag_BigHikingBag_RHand holdingbagright,
 		DisplayCategory	= Container,
+		Tags			= NylonBag,
+		NylonAmount		= 3,
    }
 
     item HCClimbingpack
@@ -84,6 +86,8 @@ module Hydrocraft
         ReplaceInSecondHand = Bag_HikingBag_LHand holdingbagleft,
         ReplaceInPrimaryHand = Bag_HikingBag_RHand holdingbagright,
 		DisplayCategory	= Container,
+		Tags			= NylonBag,
+		NylonAmount		= 3,
   }
 
     item HCPrepperbag
@@ -381,17 +385,19 @@ module Hydrocraft
 		DisplayCategory	= Container,
     }
         
-    item HCGolfbag
-    {
-        WeightReduction     = 80,
-        Weight              = 2.0,
-        Type                = Container,
-        Capacity            = 15,
-        DisplayName         = Golf Bag,
-        Icon                = HCGolfbag,
-        CanBeEquipped       = Back,
+	item HCGolfbag
+	{
+		WeightReduction	= 80,
+		Weight			= 2.0,
+		Type			= Container,
+		Capacity		= 15,
+		DisplayName		= Golf Bag,
+		Icon			= HCGolfbag,
+		CanBeEquipped	= Back,
 		DisplayCategory	= Container,
-    }
+		Tags			= NylonBag,
+		NylonAmount		= 3,
+	}
 
     item HCCosmeticcase
     {
@@ -874,7 +880,7 @@ recipe Craft Improvised Backpack using Planks
 	Sheet/Tarp/HCPillowcase,
 	SheetRope=4,
 	Plank=2,
-	keep Saw/Axe/HuntingKnife/KitchenKnife/FlintKnife,
+	keep Saw/Axe/HCMakeshiftaxe/HCMakeshiftaxeworn/HCMakeshiftaxeblunt/HCSurvivalaxe/HCHatchetsteel/HCHatchetiron/AxeStone/[Recipe.GetItemTypes.SharpKnife],
 	Result:HCImprovisedbackpack,
 	Time:300.0,
     Category:Engineer,
@@ -896,7 +902,7 @@ recipe Craft Improvised Handbag using Planks
 	Sheet/Tarp/HCPillowcase,
 	SheetRope=2,
 	Plank,
-	keep KitchenKnife/Saw/Axe/HuntingKnife/FlintKnife,
+	keep Saw/Axe/HCMakeshiftaxe/HCMakeshiftaxeworn/HCMakeshiftaxeblunt/HCSurvivalaxe/HCHatchetsteel/HCHatchetiron/AxeStone/[Recipe.GetItemTypes.SharpKnife],
 	Result:HCImprovisedhandbag,
 	Time:200.0,
     Category:Engineer,
@@ -917,7 +923,7 @@ recipe Craft Bindle using Planks
 	{
 	Sheet/Tarp/HCPillowcase,
 	Plank,
-	keep KitchenKnife/Saw/Axe/HuntingKnife/FlintKnife,
+	keep Saw/Axe/HCMakeshiftaxe/HCMakeshiftaxeworn/HCMakeshiftaxeblunt/HCSurvivalaxe/HCHatchetsteel/HCHatchetiron/AxeStone/[Recipe.GetItemTypes.SharpKnife],
 	Result:HCBindle,
 	Time:200.0,
     Category:Engineer,
@@ -938,7 +944,7 @@ recipe Craft Shoulder Pole using Planks
 	Plank,
 	SheetRope=6,
 	BucketEmpty=2,
-	keep KitchenKnife/Saw/Axe/HuntingKnife/FlintKnife,
+	keep Saw/Axe/HCMakeshiftaxe/HCMakeshiftaxeworn/HCMakeshiftaxeblunt/HCSurvivalaxe/HCHatchetsteel/HCHatchetiron/AxeStone/[Recipe.GetItemTypes.SharpKnife],
 	Result:HCShoulderpole,
 	Time:250.0,
     Category:Engineer,

@@ -17,16 +17,6 @@ item HCRubberglove
 		DisplayCategory	= ClothM,
     } 
 
-item HCGoogles
-    {
-        Weight    		= 0.2,
-        Type    		= Normal,
-        DisplayName     = Googles,
-        icon 			= HCGoogles,
-		DisplayCategory	= ClothM,
-    } 
-
-
 item HCGasmask
     {
         Weight    	        = 0.9,
@@ -131,7 +121,7 @@ recipe Make Improvised Gasmask
          HCSponge/Sponge,
          RubberBand=4,
          DuctTape/Scotchtape/HCMaskingtape/HCPackingtape/HCElectrictape,
-         keep KitchenKnife/HuntingKnife/Scissors/Scalpel/HCJackknife/HCScalpelimprovised,
+         keep HCScalpelimprovised/[Recipe.GetItemTypes.SharpKnife]/[Recipe.GetItemTypes.Scissors],
          NeedToBeLearn:true,               
          Result:HCImprovisedgasmask,
 	 Time:300.0,
