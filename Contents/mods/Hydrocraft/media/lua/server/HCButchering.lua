@@ -387,7 +387,7 @@ local function HydrocraftButchering_GenericButcherMeat(animal, meatFullType)
 	meat:setCalories(animal:getCalories() * 0.75)
 	meat:setCarbohydrates(animal:getCarbohydrates() * 0.75)
 
-	meat:setAge(animal:getAge())
+	--meat:setAge(animal:getAge())
 	meat:setRotten(animal:isRotten())
 	
 	return meat	
@@ -395,12 +395,12 @@ end
 
 local function CreateAgedMeat(animal, fullType, count, inv)
 
-	local age = animal:getAge()
+	--local age = animal:getAge()
 	local rotten = animal:isRotten()
 	
 	for i=1, count, 1 do
 		local meat = InventoryItemFactory.CreateItem(fullType)
-		meat:setAge(age)
+		--meat:setAge(age)
 		meat:setRotten(rotten)
 		inv:AddItem(meat)
 	end
